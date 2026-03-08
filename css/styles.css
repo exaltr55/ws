@@ -1,1 +1,204 @@
+/* ==============================
+   Mokshly — Custom Styles
+   Accent: #1664E0 → #6741D9 (analogous blue-violet)
+   ============================== */
 
+/* Base */
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    background: #c5d9fa;
+    color: #1a1a2e;
+}
+
+/* Navigation */
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-wrapper.scrolled {
+    background-color: rgba(250, 248, 245, 0.95);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 1px 0 rgba(22, 100, 224, 0.1);
+}
+
+.nav-link {
+    position: relative;
+    color: rgba(26, 26, 46, 0.55);
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #1664E0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, #1664E0, #6741D9);
+    transition: width 0.2s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Logo gradient */
+.logo-gradient {
+    background: linear-gradient(135deg, #1664E0, #6741D9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Mobile menu */
+.mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.mobile-menu.open {
+    max-height: 300px;
+}
+
+/* Scroll animations */
+.fade-up {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-up-delay-1 { transition-delay: 0.1s; }
+.fade-up-delay-2 { transition-delay: 0.2s; }
+.fade-up-delay-3 { transition-delay: 0.3s; }
+.fade-up-delay-4 { transition-delay: 0.4s; }
+
+/* Divider */
+.divider {
+    width: 3rem;
+    height: 2px;
+    background: linear-gradient(90deg, #1664E0, #6741D9);
+    opacity: 0.5;
+    border-radius: 1px;
+}
+
+/* Blockquote accent */
+.quote-accent {
+    border-left: 2px solid #1664E0;
+    padding-left: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/* Gradient text utility — for big titles */
+.gradient-text {
+    background: linear-gradient(135deg, #1664E0 0%, #6741D9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Gradient line / decorative bar */
+.gradient-bar {
+    height: 3px;
+    background: linear-gradient(90deg, #1664E0, #6741D9, #1664E0);
+    border-radius: 2px;
+}
+
+/* Section spacing */
+.section-gap {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+    .section-gap {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+}
+
+/* Card hover */
+.card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(22, 100, 224, 0.1);
+    border-color: rgba(22, 100, 224, 0.25);
+}
+
+/* CTA button — primary: analogous gradient */
+.btn-primary {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    background: linear-gradient(135deg, #1664E0, #6741D9);
+    color: #ffffff;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    border-radius: 2px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 24px rgba(22, 100, 224, 0.35);
+}
+
+/* CTA button — secondary */
+.btn-secondary {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    border: 1px solid rgba(22, 100, 224, 0.3);
+    color: #1664E0;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    border-radius: 2px;
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-secondary:hover {
+    border-color: #1664E0;
+    background: rgba(22, 100, 224, 0.04);
+}
+
+/* Accent border-left for list items */
+.accent-border {
+    border-left: 1px solid rgba(22, 100, 224, 0.3);
+}
+
+/* Footer */
+.footer-link {
+    color: rgba(26, 26, 46, 0.45);
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: #1664E0;
+}
+
+/* Subtle accent background for alternating sections */
+.section-accent-bg {
+    background: linear-gradient(180deg, rgba(22, 100, 224, 0.03) 0%, rgba(103, 65, 217, 0.02) 100%);
+}
